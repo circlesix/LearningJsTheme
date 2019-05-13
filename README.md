@@ -15,7 +15,7 @@ Once the code is there, you can set the theme in the admin at `Content -> Config
 
 You will need to have a working development install of [Magento 2](https://devdocs.magento.com/guides/v2.2/install-gde/bk-install-guide.html) with [sample data](https://devdocs.magento.com/guides/v2.3/install-gde/install/sample-data-after-magento.html) installed.
 
-I really like [Mark Shust's Docker Magento 2 project] (https://github.com/markoshust/docker-magento). In the blog posts, this is what I will be using. Of course there is no requirement to use this, please use whatever development platform you like.  
+I really like [Mark Shust's Docker Magento 2 project](https://github.com/markoshust/docker-magento). In the blog posts, this is what I will be using. Of course there is no requirement to use this, please use whatever development platform you like.  
 
 ## Contributing
 
