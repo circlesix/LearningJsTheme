@@ -1,0 +1,78 @@
+<?php if ($block->canShowBlock()): ?>
+    <div class="block filter">
+        <div class="block-title filter-title">
+            <strong><?= /* @escapeNotVerified */ __('Shop By') ?></strong>
+        </div>
+        <div class="block-content filter-content">
+            <?= $block->getChildHtml('state') ?>
+
+            <?php if ($block->getLayer()->getState()->getFilters()): ?>
+                <div class="block-actions filter-actions">
+                    <a href="<?= /* @escapeNotVerified */ $block->getClearUrl() ?>" class="action clear filter-clear"><span><?= /* @escapeNotVerified */ __('Clear All') ?></span></a>
+                </div>
+            <?php endif; ?>
+            <?php $wrapOptions = false; ?>
+            <?php foreach ($block->getFilters() as $filter): ?>
+        <?php if (!$wrapOptions): ?>
+            <strong role="heading" aria-level="2" class="block-subtitle filter-subtitle"><?= /* @escapeNotVerified */ __('Shopping Options') ?></strong>
+            <dl class="filter-options" id="narrow-by-list" data-role="content" data-mage-init='{"accordion":{"openedState": "active", "collapsible": true, "active": false, "multipleCollapsible": false}}'>
+                <?php $wrapOptions = true; endif; ?>
+                <?php if ($filter->getItemsCount()): ?>
+                    <div data-role="collapsible" class="filter-options-item">
+                        <dt role="heading" aria-level="3" class="filter-options-title" data-role="trigger"><?= $block->escapeHtml(__($filter->getName())) ?></dt>
+                    </div>
+                    <dd class="filter-options-content" data-role="content"><?= /* @escapeNotVerified */ $block->getChildBlock('renderer')->render($filter) ?></dd>
+                <?php endif; ?>
+                <?php endforeach; ?>
+                <?php if ($wrapOptions): ?>
+            </dl>
+        <?php endif; ?>
+        </div>
+    </div>
+    <div style="background: tomato;padding: 10px;margin: 40px auto;">
+        <div class="block-title filter-title">
+            <strong><?= /* @escapeNotVerified */ __('Our Custom Accordion') ?></strong>
+        </div>
+        <dl id="our-custom-accordion">
+            <div data-role="collapsible" class="filter-options-item">
+                <dt role="heading" aria-level="3" class="filter-options-title" data-role="trigger">Click Me</dt>
+                <dd class="filter-options-content" data-role="content">Some Content</dd>
+            </div>
+            <div data-role="collapsible" class="filter-options-item">
+                <dt role="heading" aria-level="3" class="filter-options-title" data-role="trigger">Click Me Too</dt>
+                <dd class="filter-options-content" data-role="content">Some Other Content</dd>
+            </div>
+        </dl>
+    </div>
+    <style>
+        .filter-options .filter-options-title {
+            border-bottom: 1px solid #d1d1d1;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.8rem;
+            padding: 15px 0;
+            position: relative;
+            word-break: break-all;
+        }
+        .filter-options .filter-options-title:after {
+            color: #333;
+            content: '\e61c';
+            font-size: 2.5rem;
+            font-family: 'icons-blank-theme';
+            height: 25px;
+            position: absolute;
+            right: 0;
+            top: 12px;
+        }
+        .filter-options > div.active .filter-options-title:after {
+            content: '\e60f';
+        }
+    </style>
+    <script type="text/x-magento-init">
+    {
+        "#our-custom-accordion": {
+            "Magento_LayeredNavigation/js/our-custom-accordion": {}
+        }
+    }
+    </script>
+<?php endif; ?>
