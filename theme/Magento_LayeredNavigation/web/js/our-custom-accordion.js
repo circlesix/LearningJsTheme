@@ -5,7 +5,6 @@ define([
     'use strict';
 
     return function (config, element) {
-        console.log(element);
         $(element).accordion({
             "openedState": "active",
             "collapsible": true,
