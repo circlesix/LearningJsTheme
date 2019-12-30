@@ -2,7 +2,7 @@
 
 This is an example theme to follow along with my tutorial series covering the use of Javascript in Magento 2. The `master` branch has the minimun required files to register your theme. Each branch will match the blog post with the final code of the tutorial. There is no need to copy this repo to follow along, each post will cover all the needed code. This repo exists as a reference for the work we are doing along the way. 
 
-The blog series began [with this post about Magento 2 and Require JS](https://jamersan.com/introduction-javascript-magento-2/). There is no code associated with that post. 
+The blog series began [with this post about Magento 2 and Require JS](http://circlesixdigital.com/introduction-to-javascript-in-magento-2/). There is no code associated with that post. 
 
 ## Getting Started
 
